@@ -1,13 +1,25 @@
-// Simple client-side validation example
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function (e) {
-        const email = document.querySelector('input[name="email"]').value;
-        const password = document.querySelector('input[name="password"]').value;
 
-        if (email === '' || password === '') {
-            e.preventDefault();
-            alert('Please fill in all fields.');
-        }
+document.addEventListener("DOMContentLoaded", function() {
+    const inputs = document.querySelectorAll(".floatLabel");
+    inputs.forEach(input => {
+        input.addEventListener("focus", () => {
+            const label = input.nextElementSibling;
+            if (label) {
+                label.classList.add("active");
+            }
+        });
+        input.addEventListener("blur", () => {
+            if (input.value === "") {
+                const label = input.nextElementSibling;
+                if (label) {
+                    label.classList.remove("active");
+                }
+            }
+        });
     });
 });
+
+
+window.onbeforeunload = function() {
+    window.scrollTo(0, 0);
+};
