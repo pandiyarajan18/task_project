@@ -1,7 +1,11 @@
 /* index page starts  */
 
 
- /* Banner Section */
+
+   /* index page starts  */
+
+
+    /* Banner Section */
     .banner {
         background: url('https://as1.ftcdn.net/v2/jpg/07/59/71/60/1000_F_759716062_EG01gkOAc62f3Iv7hbQL9KLRLqHbUCRn.jpg') no-repeat center center/cover;
         color: white;
@@ -108,232 +112,346 @@
 
 
 
-    /* Description Section */
+    /* Description Section Styles */
     .description {
         padding: 50px 20px;
-        background: #f4f4f4;
+        background-color: #f4f4f4;
+        /* Light background for contrast */
         text-align: center;
-        animation: slideInUp 1s ease forwards;
-        /* Slide-in animation */
-        opacity: 0;
-        /* Initial opacity for animation */
+        /* Center-align text */
+        position: relative;
+        /* For positioning effect */
+        overflow: hidden;
+        /* Prevents overflow issues */
     }
 
-    @keyframes slideInUp {
-        0% {
-            transform: translateY(50px);
+    .description-content {
+        background-color: white;
+        /* White background for content */
+        padding: 30px;
+        border-radius: 10px;
+        /* Rounded corners */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        /* Soft shadow for depth */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Smooth transition for effects */
+        max-width: 800px;
+        /* Limit width for larger screens */
+        margin: 0 auto;
+        /* Centering the content */
+        opacity: 0;
+        /* Start as hidden for animation */
+        transform: translateY(20px);
+        /* Initial position for slide-in effect */
+        animation: fadeInUp 0.5s forwards;
+        /* Animation on load */
+    }
+
+    @keyframes fadeInUp {
+        from {
             opacity: 0;
+            transform: translateY(20px);
         }
 
-        100% {
-            transform: translateY(0);
+        to {
             opacity: 1;
+            transform: translateY(0);
         }
     }
 
     .description img {
         width: 100%;
         max-width: 600px;
+        /* Maximum width for images */
         height: auto;
-        margin: 20px 0;
-        border-radius: 8px;
-        /* Added rounded corners */
-        transition: transform 0.3s, filter 0.3s;
-        /* Transition for filter */
-
+        /* Maintain aspect ratio */
+        border-radius: 10px;
+        /* Rounded corners for image */
+        margin-bottom: 20px;
+        /* Spacing below image */
+        transition: transform 0.3s ease;
+        /* Smooth scaling effect */
     }
 
     .description img:hover {
         transform: scale(1.05);
-
+        /* Slightly enlarge on hover */
     }
 
-    /* Key Digital Offerings Section */
+    .description h2 {
+        font-size: 2rem;
+        /* Larger font size for headings */
+        margin: 20px 0;
+        /* Spacing around heading */
+        color: #333;
+        /* Darker color for better visibility */
+    }
+
+    .description p {
+        font-size: 1rem;
+        /* Standard font size for paragraphs */
+        color: #555;
+        /* Slightly lighter color for text */
+        line-height: 1.6;
+        /* Better line spacing */
+        margin: 0;
+        /* Remove default margin */
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .description {
+            padding: 30px 10px;
+            /* Adjust padding for smaller screens */
+        }
+
+        .description-content {
+            padding: 20px;
+            /* Adjust padding for smaller screens */
+        }
+
+        .description h2 {
+            font-size: 1.5rem;
+            /* Smaller heading on mobile */
+        }
+
+        .description p {
+            font-size: 0.9rem;
+            /* Smaller paragraph on mobile */
+        }
+    }
+
+
+
     .offerings {
-        padding: 50px 20px;
-    }
+    background-color: #ededed; /* Light background for contrast */
+    padding: 50px 20px;
+    text-align: center;
 
-    .offerings h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+}
 
-    .offering-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        opacity: 0;
-        /* Initial opacity for animation */
-        animation: fadeIn 1s ease forwards;
-        /* Fade-in animation */
-    }
+.offerings h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase;
+}
 
-    .offering-item {
-        background: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        max-width: 300px;
-        text-align: center;
-        transition: transform 0.3s;
-        /* Added transition */
-        position: relative;
-        /* Relative positioning for animations */
-        opacity: 0;
-        /* Initial opacity for animation */
-        animation: slideIn 0.5s forwards;
-        /* Slide-in animation for each item */
-    }
-
-    @keyframes slideIn {
-        0% {
-            transform: translateY(50px);
-            opacity: 0;
-        }
-
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    .why-us {
-        background: #e0f7fa;
-        padding: 50px 20px;
-        text-align: center;
-        animation: fadeIn 1s ease;
-        /* Fade-in animation */
-    }
+.offering-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three items per row */
+    gap: 20px;
     
+}
 
-    .offering-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        /* Shadow effect */
+.offering-item {
+    background-color: #ffffff; /* White background for offerings */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.offering-item:nth-child(odd) {
+    background-color: #eaf6ff; /* Slightly different color for odd items */
+}
+
+.offering-item:nth-child(even) {
+    background-color: #f9f9f9; /* Slightly different color for even items */
+}
+
+.offering-item:hover {
+    transform: translateY(-5px);
+}
+
+.offering-icon {
+    font-size: 3rem;
+    color: #3498db; /* Icon color */
+    margin-bottom: 15px;
+}
+
+.offering-item h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #34495e; /* Heading color */
+}
+
+.offering-item p {
+    font-size: 1rem;
+    color: #7f8c8d; /* Text color */
+}
+
+/* Ensure the height of each offering item is consistent */
+.offering-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Make all items the same height */
+}
+
+
+
+
+
+
+
+
+
+
+
+ /* Why Choose Us Section Styles */
+ .why-us {
+        padding: 50px 20px; /* Adequate padding */
+        background-color: #f8f9fa; /* Light background for contrast */
+        text-align: center; /* Center-align text */
+        border-radius: 10px; /* Rounded corners for a modern look */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     }
 
-    /* Why Choose Us Section */
-    .why-choose-us {
-        padding: 50px 20px;
-        background: #f9f9f9;
-        /* Light background for contrast */
-        text-align: center;
-        position: relative;
-        transition: transform 0.3s ease;
-        /* Smooth transition for hover effect */
+    .why-us h2 {
+        font-size: 2.5rem; /* Large font size for the heading */
+        color: #333; /* Dark color for better visibility */
+        margin-bottom: 30px; /* Spacing below the heading */
+    }
+
+    .why-us ul {
+        list-style: none; /* Remove default list styling */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+        font-size: 1.2rem; /* Increase font size for readability */
+        color: #555; /* Dark grey for text */
+    }
+
+    .why-us li {
+        margin-bottom: 20px; /* Spacing between list items */
+        position: relative; /* Positioning for the bullet */
+        padding-left: 30px; /* Space for custom bullet */
+    }
+
+    .why-us li::before {
+        content: ''; /* Custom bullet */
+        position: absolute; /* Position it absolutely */
+        left: 0; /* Align to the left */
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Adjust vertical position */
+        width: 10px; /* Bullet size */
+        height: 10px; /* Bullet size */
+        border-radius: 50%; /* Circular bullet */
+        background-color: #007BFF; /* Primary color for the bullet */
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .why-us {
+            padding: 30px 15px; /* Adjust padding for smaller screens */
+        }
+
+        .why-us h2 {
+            font-size: 2rem; /* Adjust heading size for smaller screens */
+        }
+
+        .why-us ul {
+            font-size: 1rem; /* Adjust font size for list items */
+        }
+    }
+
+
+
+
+
+
+
+ /* Section Styles */
+ .why-choose-us {
+        background-color: #f9f9f9; /* Light background */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
     }
 
     .why-choose-us h2 {
-        margin-bottom: 20px;
-        font-family: 'Arial', sans-serif;
-        color: #333;
-        /* Dark color for contrast */
+        font-size: 28px;
+        color: #2c3e50; /* Dark text */
+        text-align: center;
+        margin-bottom: 10px;
     }
 
     .why-choose-us p {
-        color: #555;
-        /* Slightly lighter text color */
-        margin-bottom: 30px;
-        /* Space below paragraph */
-    }
-
-    /* Box Style for List Items */
-    .why-choose-us ul {
-        list-style: none;
-        padding: 0;
-        text-align: left;
-        /* Align text left for better readability */
-        margin: 0 auto;
-        /* Center the list */
-        max-width: 800px;
-        /* Limit the width */
-    }
-
-    .why-choose-us ul li {
-        margin-bottom: 15px;
-        /* Space between list items */
-        padding: 20px;
-        /* Padding for a box effect */
-        border: 1px solid #ddd;
-        /* Light border */
-        border-radius: 8px;
-        /* Rounded corners */
-        background: #fff;
-        /* White background */
-        transition: box-shadow 0.3s ease, transform 0.3s ease;
-        /* Transition for hover effect */
-    }
-
-    /* Hover effect for list items */
-    .why-choose-us ul li:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        /* Shadow effect on hover */
-        transform: translateY(-5px);
-        /* Lift effect on hover */
-    }
-
-    /* Driving Business Growth Section */
-    h3 {
-        margin-top: 40px;
-        /* Space above */
-        font-size: 1.8rem;
-        /* Adjust heading size */
-        color:  #333;
-        /* Primary color */
+        color: #34495e; /* Slightly lighter text */
         text-align: center;
-        /* Center text */
+        margin-bottom: 30px;
+        font-size: 16px;
     }
 
-    h3:hover {
-        color: #0056b3;
-        /* Darker color on hover */
-        text-decoration: underline;
-        /* Underline on hover */
+    .why-choose-columns {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 
-
-    /* Driving Business Growth Box */
-    .driving-business-box {
-        background: #ffffff;
-        /* White background */
-        border: 2px solid #ffff;
-        /* Accent border */
-        border-radius: 8px;
-        /* Rounded corners */
-        padding: 30px;
-        /* Padding inside the box */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        /* Subtle shadow for depth */
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        /* Transition for hover effects */
-        margin-top: 30px;
-        /* Space above the box */
+    .left-column, .right-column {
+        width: 48%;
+        margin-bottom: 20px;
     }
 
-    /* Hover effect for the box */
-    .driving-business-box:hover {
+    .box {
+        background-color: #ffffff; /* White background for boxes */
+        border: 2px solid #3498db; /* Accent color */
+        border-radius: 5px;
+        padding: 15px;
+        margin: 10px 0;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .box:hover {
         transform: translateY(-5px);
-        /* Slight lift effect */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        /* Darker shadow on hover */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
-    /* Additional fade-in effect for the box */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-            /* Start below */
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-            /* End at original position */
-        }
+    .driving-business-box {
+        background-color: #e7f0f7; /* Light blue background */
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 30px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
+    .driving-business-box h3 {
+        color: #2980b9; /* Dark blue */
+        margin-bottom: 10px;
+    }
+
+    .driving-business-box img {
+        border-radius: 10px;
+        margin: 20px 0;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .key-benefits {
+        background-color: #ffffff; /* White background */
+        border: 2px solid #3498db; /* Accent color */
+        border-radius: 5px;
+        padding: 15px;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .key-benefits h3 {
+        color: #2980b9; /* Dark blue */
+    }
+
+    .key-benefits p {
+        color: #34495e; /* Slightly lighter text */
+    }
+
+    @media (max-width: 768px) {
+        .left-column, .right-column {
+            width: 100%;
+        }
+    }
 
 /*  index page ends*/
 
