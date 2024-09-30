@@ -1,227 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); /* Importing Google Font */
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <style>
-        /* Colors */
-        /* ---------------------------------------- */
-        :root {
-            --border: #c6c6c6;
-            --border-focus: #9FB1C1;
-            --brand-color: #1b3d4d;
-            --booking-green: #bdcc00;
-            /* Not used in CSS */
-            --asphalt: #506982;
-        }
+    .why-us {
+        font-family: 'Poppins', sans-serif; /* Applying Poppins font to the section */
+        background: linear-gradient(135deg, #ffffff, #f2f2f2); /* Soft gradient background for a modern feel */
+        padding: 50px 30px; /* Reduced padding for a more compact design */
+        text-align: center;
+        animation: fadeIn 1s ease; /* Smooth fade-in animation */
+        border-radius: 15px; /* Reduced rounded corners for a sleek look */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Slightly reduced shadow for subtle depth */
+        margin: 30px auto; /* Reduced space between sections and centering */
+        max-width: 800px; /* Limit the width for better readability */
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    .why-us h2 {
+        font-size: 2.5rem; /* Reduced font size for the heading */
+        margin-bottom: 25px; /* Reduced space below the heading */
+        font-weight: 600; /* Keep heading bold */
+        letter-spacing: 0.8px; /* Slightly reduced letter spacing */
+        text-transform: uppercase; /* Uppercase heading for emphasis */
+    }
 
-        body {
-            text-align: center;
-            font-family: 'Lato', sans-serif;
-            background-color: #f7f7f7;
-        }
+    .why-us ul {
+        list-style-type: none; /* Remove default list style */
+        padding: 0; /* Remove default padding */
+    }
 
-        a {
-            text-decoration: none;
-        }
+    .why-us li {
+        font-size: 1.2rem; /* Reduced font size for list items */
+        margin: 15px 0; /* Reduced space between list items */
+        text-align: left; /* Align text to the left */
+        display: flex; /* Use flexbox for better alignment */
+        align-items: center; /* Vertically center the icon and text */
+        line-height: 1.6; /* Reduce line height for compactness */
+        transition: all 0.3s ease; /* Smooth transition on hover */
+    }
 
-        .info-text {
-            text-align: left;
-        }
+    .why-us li:hover {
+        transform: translateX(8px); /* Slight movement on hover for interactivity */
+    }
 
-        header {
-            padding: 4em 10%;
-        }
+    .why-us li::before {
+        content: "✔"; /* Add a checkmark before each list item */
+        color: #28a745; /* Green color for the checkmark to indicate positivity */
+        font-weight: bold;
+        margin-right: 10px; /* Reduced space between the icon and the text */
+        font-size: 1.3rem; /* Reduced icon size for better balance */
+    }
 
-        /* Form Container */
-        .form-container {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            /* Adjust width as needed */
-            margin: 50px auto;
-            /* Center the container */
-            padding: 2.5em;
-            /* Increased padding inside the container */
-        }
+    .why-us li strong {
+        font-weight: 600; /* Use medium-heavy font weight for strong text */
+    }
+</style>
 
-        form {
-            padding: 0;
-            /* Remove padding since it's now in .form-container */
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        h2.heading {
-            font-size: 20px;
-            /* Slightly larger font size */
-            text-transform: uppercase;
-            font-weight: 300;
-            text-align: left;
-            color: var(--asphalt);
-            border-bottom: 1px solid var(--asphalt);
-            padding-bottom: 5px;
-            /* Increased padding */
-            margin-bottom: 30px;
-        }
-
-        .controls {
-            text-align: left;
-            position: relative;
-            margin-bottom: 18px;
-        }
-
-        input,
-        textarea,
-        select {
-            padding: 14px;
-            /* Increased padding */
-            font-size: 16px;
-            border: 1px solid var(--border);
-            width: 100%;
-            margin-bottom: 18px;
-            color: #888;
-            border-radius: 2px;
-            transition: border-color .3s;
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--border-focus);
-        }
-
-        label {
-            position: absolute;
-            left: 10px;
-            /* Adjusted for better alignment */
-            top: 8px;
-            /* Adjusted for better alignment */
-            width: 60%;
-            color: #999;
-            font-size: 16px;
-            display: inline-block;
-            padding: 4px 10px;
-            transition: color .3s, top .3s;
-            background-color: rgba(255, 255, 255, 1);
-        }
-
-        label.active {
-            top: -25px;
-            color: #555;
-        }
-
-        button {
-            cursor: pointer;
-            background-color: var(--brand-color);
-            border: none;
-            color: #fff;
-            padding: 12px 0;
-            /* Consistent padding */
-            width: 100%;
-            /* Button takes full width */
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #163a40;
-        }
-
-        .grid {
-            background: white;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 760px) {
-            .col-1-4 {
-                width: 100%;
-                padding-right: 0;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <div class="form-container">
-        <form action="submit_application.php" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <h2 class="heading">Job Application</h2>
-                <div class="controls">
-                    <input type="text" id="full_name" class="floatLabel" name="full_name" required>
-                    <label for="full_name">Full Name</label>
-                </div>
-                <div class="controls">
-                    <input type="email" id="email" class="floatLabel" name="email" required>
-                    <label for="email">Email Address</label>
-                </div>
-                <div class="controls">
-                    <input type="tel" id="phone" class="floatLabel" name="phone" required>
-                    <label for="phone">Phone Number</label>
-                </div>
-                <div class="controls">
-                    <select id="position" class="floatLabel" name="position" required>
-                        <option value="">Select Position</option>
-                        <option value="developer">Developer</option>
-                        <option value="designer">Designer</option>
-                        <option value="manager">Manager</option>
-                        <!-- Add more positions as needed -->
-                    </select>
-                    <label for="position">Position</label>
-                </div>
-                <div class="controls">
-                    <input type="file" id="resume" name="resume" accept=".pdf,.docx" required>
-                    <label for="resume">Upload Resume</label>
-                </div>
-                <div class="controls">
-                    <textarea id="cover_letter" class="floatLabel" name="cover_letter" placeholder="Cover Letter"></textarea>
-                    <label for="cover_letter">Cover Letter</label>
-                </div>
-                <div class="controls">
-                    <input type="date" id="availability" class="floatLabel" name="availability" required>
-                    <label for="availability">Availability Date</label>
-                </div>
-            </div>
-            <!--  Details -->
-            <div class="form-group">
-                <div class="grid">
-                    <button type="submit" value="Submit" class="col-1-4">Apply Now</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const inputs = document.querySelectorAll(".floatLabel");
-            inputs.forEach(input => {
-                input.addEventListener("focus", () => {
-                    const label = input.nextElementSibling;
-                    if (label) {
-                        label.classList.add("active");
-                    }
-                });
-                input.addEventListener("blur", () => {
-                    if (input.value === "") {
-                        const label = input.nextElementSibling;
-                        if (label) {
-                            label.classList.remove("active");
-                        }
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-
-</html>
+<section class="why-us">
+    <h2>Why Choose Us?</h2>
+    <ul>
+        <li><strong>Expert Team:</strong> Our team stays updated with the latest trends and techniques.</li>
+        <li><strong>Customized Solutions:</strong> We tailor our services to meet your business goals.</li>
+        <li><strong>Proven Results:</strong> We have a track record of delivering measurable results.</li>
+    </ul>
+</section>

@@ -2,298 +2,337 @@
 
 
  /* Banner Section */
- .banner {
-    background: url('https://as1.ftcdn.net/v2/jpg/07/59/71/60/1000_F_759716062_EG01gkOAc62f3Iv7hbQL9KLRLqHbUCRn.jpg') no-repeat center center/cover;
-    color: white;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-    position: relative;
-    /* Relative positioning for animations */
-    overflow: hidden;
-    opacity: 0;
-    /* Initial opacity for animation */
-    animation: fadeIn 1s ease forwards, slideIn 0.5s ease forwards;
-    /* Multiple animations */
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    from {
+    .banner {
+        background: url('https://as1.ftcdn.net/v2/jpg/07/59/71/60/1000_F_759716062_EG01gkOAc62f3Iv7hbQL9KLRLqHbUCRn.jpg') no-repeat center center/cover;
+        color: white;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 20px;
+        position: relative;
+        /* Relative positioning for animations */
+        overflow: hidden;
         opacity: 0;
+        /* Initial opacity for animation */
+        animation: fadeIn 1s ease forwards, slideIn 0.5s ease forwards;
+        /* Multiple animations */
     }
 
-    to {
-        opacity: 1;
+    /* Fade-in animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
-}
 
-/* Slide-in animation */
-@keyframes slideIn {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.banner-content {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 8px;
-    animation: fadeIn 1s ease 0.5s forwards;
-    /* Delay added */
-    transform: translateY(50px);
-    /* Start below the screen */
-    opacity: 0;
-    /* Initial opacity for animation */
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    /* Smooth transition for transform and opacity */
-}
-
-/* Add hover effect on banner content */
-.banner-content:hover {
-    transform: translateY(0);
-    /* Move to original position */
-    opacity: 1;
-    /* Fade in */
-}
-
-/* Button Animation */
-.button {
-    background: #00bcd4;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s, transform 0.3s;
-    /* Transition for scale effect */
-}
-
-.button:hover {
-    background: #0097a7;
-    transform: scale(1.05);
-    /* Scale effect */
-}
-
-/* Additional animations for text */
-.banner h1 {
-    animation: slideIn 1s ease forwards;
-    /* Slide in for heading */
-    transform: translateY(-30px);
-    /* Start higher */
-    opacity: 0;
-    /* Initial opacity */
-    animation-delay: 0.5s;
-    /* Delay for heading */
-}
-
-.banner p {
-    animation: slideIn 1s ease forwards;
-    /* Slide in for paragraph */
-    transform: translateY(30px);
-    /* Start lower */
-    opacity: 0;
-    /* Initial opacity */
-    animation-delay: 0.8s;
-    /* Delay for paragraph */
-}
-
-
-
-/* Description Section */
-.description {
-    padding: 50px 20px;
-    background: #f4f4f4;
-    text-align: center;
-    animation: slideInUp 1s ease forwards;
     /* Slide-in animation */
-    opacity: 0;
-    /* Initial opacity for animation */
-}
+    @keyframes slideIn {
+        0% {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
 
-@keyframes slideInUp {
-    0% {
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .banner-content {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 8px;
+        animation: fadeIn 1s ease 0.5s forwards;
+        /* Delay added */
         transform: translateY(50px);
+        /* Start below the screen */
         opacity: 0;
+        /* Initial opacity for animation */
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        /* Smooth transition for transform and opacity */
     }
 
-    100% {
+    /* Add hover effect on banner content */
+    .banner-content:hover {
         transform: translateY(0);
+        /* Move to original position */
         opacity: 1;
+        /* Fade in */
     }
-}
 
-.description img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    margin: 20px 0;
-    border-radius: 8px;
-    /* Added rounded corners */
-    transition: transform 0.3s, filter 0.3s;
-    /* Transition for filter */
+    /* Button Animation */
+    .button {
+        background: #00bcd4;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s, transform 0.3s;
+        /* Transition for scale effect */
+    }
 
-}
+    .button:hover {
+        background: #0097a7;
+        transform: scale(1.05);
+        /* Scale effect */
+    }
 
-.description img:hover {
-    transform: scale(1.05);
-
-}
-
-/* Key Digital Offerings Section */
-.offerings {
-    padding: 50px 20px;
-}
-
-.offerings h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.offering-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    opacity: 0;
-    /* Initial opacity for animation */
-    animation: fadeIn 1s ease forwards;
-    /* Fade-in animation */
-}
-
-.offering-item {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    text-align: center;
-    transition: transform 0.3s;
-    /* Added transition */
-    position: relative;
-    /* Relative positioning for animations */
-    opacity: 0;
-    /* Initial opacity for animation */
-    animation: slideIn 0.5s forwards;
-    /* Slide-in animation for each item */
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateY(50px);
+    /* Additional animations for text */
+    .banner h1 {
+        animation: slideIn 1s ease forwards;
+        /* Slide in for heading */
+        transform: translateY(-30px);
+        /* Start higher */
         opacity: 0;
+        /* Initial opacity */
+        animation-delay: 0.5s;
+        /* Delay for heading */
     }
 
-    100% {
-        transform: translateY(0);
-        opacity: 1;
+    .banner p {
+        animation: slideIn 1s ease forwards;
+        /* Slide in for paragraph */
+        transform: translateY(30px);
+        /* Start lower */
+        opacity: 0;
+        /* Initial opacity */
+        animation-delay: 0.8s;
+        /* Delay for paragraph */
     }
-}
-
-.offering-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    /* Shadow effect */
-}
-
-/* Why Choose Us Section */
-.why-us {
-    background: #e0f7fa;
-    padding: 50px 20px;
-    text-align: center;
-    animation: fadeIn 1s ease;
-    /* Fade-in animation */
-}
 
 
 
-
-
-/* Section styles */
-.why-choose-us {
-    padding: 50px 20px;
-    background: #f9f9f9;
-    /* Light background for contrast */
-    text-align: center;
-    position: relative;
-    /* Position relative for child animations */
-}
-
-/* Title and paragraph styles */
-.why-choose-us h2,
-.why-choose-us h3 {
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif;
-    transition: transform 0.5s ease, color 0.5s ease;
-    /* Transition on hover */
-}
-
-.why-choose-us p {
-    transition: transform 0.5s ease;
-}
-
-/* Fade-in animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.6s forwards;
-    animation-delay: 0.3s;
-    /* Delay for a staggered effect */
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    /* Description Section */
+    .description {
+        padding: 50px 20px;
+        background: #f4f4f4;
+        text-align: center;
+        animation: slideInUp 1s ease forwards;
+        /* Slide-in animation */
+        opacity: 0;
+        /* Initial opacity for animation */
     }
-}
 
-/* List styles */
-.why-choose-us ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    /* Align text left for better readability */
-    margin: 0 auto;
-    /* Center the list */
-    max-width: 800px;
-    /* Limit the width */
-}
+    @keyframes slideInUp {
+        0% {
+            transform: translateY(50px);
+            opacity: 0;
+        }
 
-.why-choose-us ul li {
-    margin-bottom: 15px;
-    /* Space between list items */
-    padding: 10px;
-    /* Add padding for clickable effect */
-    border: 1px solid transparent;
-    /* Initial border */
-    border-radius: 5px;
-    /* Rounded corners */
-    transition: border-color 0.3s ease, background-color 0.3s ease;
-    /* Transition for hover */
-}
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
 
-/* Hover effect for list items */
-.why-choose-us ul li:hover {
-    border-color: #007BFF;
-    /* Change border color on hover */
-    background-color: rgba(0, 123, 255, 0.1);
-    /* Light background on hover */
-}
+    .description img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin: 20px 0;
+        border-radius: 8px;
+        /* Added rounded corners */
+        transition: transform 0.3s, filter 0.3s;
+        /* Transition for filter */
 
-/* Key benefits styles */
-.key-benefits {
-    margin-top: 30px;
-    /* Space above the benefits section */
-}
+    }
+
+    .description img:hover {
+        transform: scale(1.05);
+
+    }
+
+    /* Key Digital Offerings Section */
+    .offerings {
+        padding: 50px 20px;
+    }
+
+    .offerings h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .offering-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        opacity: 0;
+        /* Initial opacity for animation */
+        animation: fadeIn 1s ease forwards;
+        /* Fade-in animation */
+    }
+
+    .offering-item {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        text-align: center;
+        transition: transform 0.3s;
+        /* Added transition */
+        position: relative;
+        /* Relative positioning for animations */
+        opacity: 0;
+        /* Initial opacity for animation */
+        animation: slideIn 0.5s forwards;
+        /* Slide-in animation for each item */
+    }
+
+    @keyframes slideIn {
+        0% {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .why-us {
+        background: #e0f7fa;
+        padding: 50px 20px;
+        text-align: center;
+        animation: fadeIn 1s ease;
+        /* Fade-in animation */
+    }
+    
+
+    .offering-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        /* Shadow effect */
+    }
+
+    /* Why Choose Us Section */
+    .why-choose-us {
+        padding: 50px 20px;
+        background: #f9f9f9;
+        /* Light background for contrast */
+        text-align: center;
+        position: relative;
+        transition: transform 0.3s ease;
+        /* Smooth transition for hover effect */
+    }
+
+    .why-choose-us h2 {
+        margin-bottom: 20px;
+        font-family: 'Arial', sans-serif;
+        color: #333;
+        /* Dark color for contrast */
+    }
+
+    .why-choose-us p {
+        color: #555;
+        /* Slightly lighter text color */
+        margin-bottom: 30px;
+        /* Space below paragraph */
+    }
+
+    /* Box Style for List Items */
+    .why-choose-us ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+        /* Align text left for better readability */
+        margin: 0 auto;
+        /* Center the list */
+        max-width: 800px;
+        /* Limit the width */
+    }
+
+    .why-choose-us ul li {
+        margin-bottom: 15px;
+        /* Space between list items */
+        padding: 20px;
+        /* Padding for a box effect */
+        border: 1px solid #ddd;
+        /* Light border */
+        border-radius: 8px;
+        /* Rounded corners */
+        background: #fff;
+        /* White background */
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        /* Transition for hover effect */
+    }
+
+    /* Hover effect for list items */
+    .why-choose-us ul li:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        /* Shadow effect on hover */
+        transform: translateY(-5px);
+        /* Lift effect on hover */
+    }
+
+    /* Driving Business Growth Section */
+    h3 {
+        margin-top: 40px;
+        /* Space above */
+        font-size: 1.8rem;
+        /* Adjust heading size */
+        color:  #333;
+        /* Primary color */
+        text-align: center;
+        /* Center text */
+    }
+
+    h3:hover {
+        color: #0056b3;
+        /* Darker color on hover */
+        text-decoration: underline;
+        /* Underline on hover */
+    }
+
+
+    /* Driving Business Growth Box */
+    .driving-business-box {
+        background: #ffffff;
+        /* White background */
+        border: 2px solid #ffff;
+        /* Accent border */
+        border-radius: 8px;
+        /* Rounded corners */
+        padding: 30px;
+        /* Padding inside the box */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        /* Subtle shadow for depth */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Transition for hover effects */
+        margin-top: 30px;
+        /* Space above the box */
+    }
+
+    /* Hover effect for the box */
+    .driving-business-box:hover {
+        transform: translateY(-5px);
+        /* Slight lift effect */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        /* Darker shadow on hover */
+    }
+
+    /* Additional fade-in effect for the box */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+            /* Start below */
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+            /* End at original position */
+        }
+    }
 
 
 /*  index page ends*/

@@ -1,9 +1,6 @@
 <?php
-
-include 'db_connect.php'; // Ensure this file correctly establishes the $conn variable
-
-// Initialize a message variable for feedback
-$message = "";
+session_start(); // Start the session
+include 'db_connect.php'; // Database connection
 
 // Handle the form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -15,22 +12,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cover_letter = $_POST['cover_letter'];
     $availability = $_POST['availability'];
 
-    // Prepare an SQL statement to insert data
+    // Prepare an SQL statement
     $stmt = $conn->prepare("INSERT INTO job_applications (full_name, email, phone, position, cover_letter, availability) VALUES (?, ?, ?, ?, ?, ?)");
-    
-    // Bind parameters
     $stmt->bind_param("ssssss", $full_name, $email, $phone, $position, $cover_letter, $availability);
 
-    // Execute the statement
+    // Execute the statement and set session message
     if ($stmt->execute()) {
-        $message = "Application submitted successfully!";
-        header("Location: ../career.php");
+        $_SESSION['message'] = "Data Stored successfully!";
     } else {
-        $message = "Error: " . $stmt->error;
+        $_SESSION['message'] = "Error: " . $stmt->error;
     }
-    $stmt->close();
-}
 
-// Close the database connection
-$conn->close();
+    $stmt->close();
+    $conn->close();
+
+    // Redirect to career page
+    header("Location: ../career.php");
+    exit();
+}
 ?>

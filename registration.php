@@ -1,4 +1,8 @@
-<?php include 'temp/header.php'; ?>
+<?php
+session_start(); // Start the session
+include 'temp/header.php'; ?>
+
+
 
 <div class="registration-container">
 
@@ -40,7 +44,22 @@
             </div>
         </form>
     </div>
-
+    <script src="js/script.js" defer></script>
+    <script>
+        // Display Sweet Alert based on session message
+        window.onload = function() {
+            <?php if (isset($_SESSION['message'])): ?>
+                swal({
+                    title: "Notification",
+                    text: "<?php echo $_SESSION['message']; ?>",
+                    icon: "<?php echo strpos($_SESSION['message'], 'Error') !== false ? 'error' : 'success'; ?>",
+                    button: "OK",
+                });
+                <?php unset($_SESSION['message']); // Clear the message after displaying 
+                ?>
+            <?php endif; ?>
+        };
+    </script>
 
     <?php include 'temp/footer.php'; ?>
     <script src="js/script.js" defer></script>

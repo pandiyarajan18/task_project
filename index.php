@@ -1,7 +1,5 @@
 <?php include 'temp/header.php'; ?>
 
-
-<div class="unique-banner-section">
     <!-- Banner Section -->
     <header class="banner">
         <div class="banner-content">
@@ -59,13 +57,9 @@
             <li><strong>Customized Solutions:</strong> We tailor our services to meet your business goals.</li>
             <li><strong>Proven Results:</strong> We have a track record of delivering measurable results.</li>
         </ul>
-    </section><!-- Why Choose Nashi Informatics Solutions Section -->
+    </section>
 
 
-
-
-
-    <!-- Why Choose Us Section -->
 
     <section class="why-choose-us">
         <h2 class="fade-in">Why Choose Nashi Informatics Solutions as Your Digital Marketing Services Agency?</h2>
@@ -87,20 +81,22 @@
             </div>
         </div>
 
-        <h3 class="fade-in">Driving Business Growth with Innovative Digital Marketing Solutions</h3>
-        <p class="fade-in">Achieving business growth through digital marketing services, Nashi Informatics Solutions offers tailored strategies that boost your online presence and engage your target audience. Our comprehensive approach includes SEO, PPC advertising, social media marketing, content creation, and email campaigns, all designed to deliver measurable results.</p>
-        <p class="fade-in">By utilizing data-driven insights and innovative techniques, we help your business reach its full potential and sustain growth in a competitive digital landscape.</p>
-
-        <img src="https://t4.ftcdn.net/jpg/06/85/50/95/240_F_685509523_hUN5TZ08gzw7s216Dw1QXVzYdtqzggOq.jpg" alt="Digital Marketing Strategy" class="fade-in" style="width: 100%; max-width: 600px; border-radius: 8px; margin: 20px 0;">
-
-        <div class="key-benefits fade-in">
-            <h3>Key Benefits</h3>
-            <p><strong>Contribution to Growth:</strong> 50+</p>
-            <p><strong>Years of Experience:</strong> 50+</p>
-            <p><strong>Clients Served:</strong> 11+</p>
+        <!-- Box for Driving Business Growth -->
+        <div class="driving-business-box fade-in">
+            <h3>Driving Business Growth with Innovative Digital Marketing Solutions</h3>
+            <p>Achieving business growth through digital marketing services, Nashi Informatics Solutions offers tailored strategies that boost your online presence and engage your target audience. Our comprehensive approach includes SEO, PPC advertising, social media marketing, content creation, and email campaigns, all designed to deliver measurable results.</p>
+            <p>By utilizing data-driven insights and innovative techniques, we help your business reach its full potential and sustain growth in a competitive digital landscape.</p>
+            <img src="https://t4.ftcdn.net/jpg/06/85/50/95/240_F_685509523_hUN5TZ08gzw7s216Dw1QXVzYdtqzggOq.jpg" alt="Digital Marketing Strategy" style="width: 100%; max-width: 600px; border-radius: 8px; margin: 20px 0;">
+            <div class="key-benefits fade-in">
+                <h3>Key Benefits</h3>
+                <p><strong>Contribution to Growth:</strong> 50+</p>
+                <p><strong>Years of Experience:</strong> 50+</p>
+                <p><strong>Clients Served:</strong> 11+</p>
+            </div>
         </div>
-    </section>
 
+
+    </section>
 
 
     <!-- Footer -->
